@@ -2,6 +2,10 @@
 # require_relative '../response-recipe-list.json'
 require 'json'
 
+Ingredient.destroy_all
+Recipe.destroy_all
+Dish.destroy_all
+
 json_recipes = File.read('./db/response-recipe-details.json')
 # json_recipes = File.join(File.dirname(__FILE__), "./")
 recipe_hash = JSON.parse(json_recipes)
@@ -29,7 +33,4 @@ count = 0
     dish.save
     count += 1
 end
-Ingredient.destroy_all
-Recipe.destroy_all
-Dish.destroy_all
 
