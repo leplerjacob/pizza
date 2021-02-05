@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dish.title %>
+</p>
+
+<p>
+  <strong>Ready in minutes:</strong>
+  <%= @dish.ready_in_minutes %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @dish.image %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @dish.summary %>
+</p>
+
+<p>
+  <strong>Sourceurl:</strong>
+  <%= @dish.sourceurl %>
+</p>
+
+<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<%= link_to 'Back', dishes_path %>

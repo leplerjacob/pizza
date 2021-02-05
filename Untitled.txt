@@ -39,7 +39,7 @@ rails g scaffold Ingredient name:string aisle:string availability:boolean --skip
 
 rails g scaffold Recipe 
 
-rails g scaffold Ingredient 
+rails g scaffold Dish 
 
 
 
