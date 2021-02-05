@@ -1,0 +1,50 @@
+Models:
+
+# Ingredients
+	- Has_Many: dishes, Through Recipes
+
+	- Name			string
+	- Aisle			string
+	- Availability boolean
+
+
+# Recipes (Ingredient List for Dish)
+	- Belongs_to: Ingredients
+	- Belongs_to: Dishes
+
+	- Ingredient_id FK		integer
+	- Dish_id FK				integer
+	- Amount					float
+	- Unit						string
+	- Meta (preparation)		string
+	- Original (instruction)	string
+
+
+# Dishes
+	- Has_many: Ingredients, Through Recipes
+
+	- Title						string
+	- Ready_in_minutes		integer
+	- Image						string
+	- Summary					text
+	- SourceUrl				string
+
+Methods:
+
+
+Controllers:
+
+
+rails g scaffold Ingredient name:string aisle:string availability:boolean --skip-test
+
+rails g scaffold Recipe 
+
+rails g scaffold Ingredient 
+
+
+
+
+
+
+
+
