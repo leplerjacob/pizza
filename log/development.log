@@ -104,3 +104,658 @@ Processing by DishesController#index as HTML
 Completed 200 OK in 813ms (Views: 798.3ms | ActiveRecord: 1.6ms | Allocations: 4906)
 
 
+Started GET "/dishes" for ::1 at 2021-02-05 12:15:36 -0600
+  [1m[35m (37.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (7.6ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 1215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 320.1ms | Allocations: 8513)
+Completed 200 OK in 455ms (Views: 326.4ms | ActiveRecord: 7.6ms | Allocations: 13428)
+
+
+Started GET "/dishes/new" for ::1 at 2021-02-05 12:15:40 -0600
+Processing by DishesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/new.html.erb within layouts/application
+  Rendered dishes/_form.html.erb (Duration: 58.4ms | Allocations: 6390)
+  Rendered dishes/new.html.erb within layouts/application (Duration: 61.3ms | Allocations: 6756)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 223.7ms | Allocations: 11142)
+Completed 200 OK in 238ms (Views: 224.7ms | ActiveRecord: 1.3ms | Allocations: 16285)
+
+
+Started POST "/dishes" for ::1 at 2021-02-05 12:17:10 -0600
+Processing by DishesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "dish"=>{"title"=>"Test Pizza", "ready_in_minutes"=>"300", "image"=>"", "summary"=>"It is really good", "sourceurl"=>"https://littledeliandpizza.com/"}, "commit"=>"Create Dish"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/dishes_controller.rb:27:in `block in create'
+  [1m[36mDish Create (2.2ms)[0m  [1m[32mINSERT INTO "dishes" ("title", "ready_in_minutes", "image", "summary", "sourceurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Test Pizza"], ["ready_in_minutes", 300], ["image", ""], ["summary", "It is really good"], ["sourceurl", "https://littledeliandpizza.com/"], ["created_at", "2021-02-05 18:17:10.204586"], ["updated_at", "2021-02-05 18:17:10.204586"]]
+  ↳ app/controllers/dishes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/dishes_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/dishes/1
+Completed 302 Found in 16ms (ActiveRecord: 3.8ms | Allocations: 2928)
+
+
+Started GET "/dishes/1" for ::1 at 2021-02-05 12:17:10 -0600
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.6ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/show.html.erb within layouts/application
+  Rendered dishes/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 407.5ms | Allocations: 4055)
+Completed 200 OK in 443ms (Views: 409.7ms | ActiveRecord: 0.6ms | Allocations: 7580)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:17:14 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5034)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.2ms | Allocations: 6111)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:17:18 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 841)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 4589)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms | Allocations: 4991)
+
+
+Started GET "/dishes/1" for ::1 at 2021-02-05 12:17:21 -0600
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/show.html.erb within layouts/application
+  Rendered dishes/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3857)
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 4800)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:17:27 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (1.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4683)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 1.4ms | Allocations: 5626)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:17:52 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 5151)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.2ms | Allocations: 6840)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:18:12 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.1ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 105.1ms | Allocations: 5151)
+Completed 200 OK in 112ms (Views: 108.8ms | ActiveRecord: 0.1ms | Allocations: 6835)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:18:34 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:62:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 5186)
+Completed 200 OK in 49ms (Views: 44.4ms | ActiveRecord: 0.2ms | Allocations: 6874)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:30:36 -0600
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:30:36 -0600
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.8ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2190)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2266)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 1.7ms | Allocations: 14424)
+
+
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2680)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2752)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 2.2ms | Allocations: 14855)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Update Dish</h1>
+<%= form_for(@dish) do |f|%>
+    <%= f.label :Name %>
+    <%= f.text_field :title%>
+    <%= f.label :Takes (minutes) %>
+    <%= f.number_field :ready_in_minutes %>
+    <%= f.label :Dish description %>
+    <%= f.text_area :summary %>
+    <p><%= f.submit %></p>
+<% end %>
+
+
+
+<%= link_to 'Show', @dish %> |
+<%= link_to 'Back', dishes_path %> | 
+<%= link_to 'Advanced', advance_edit_dish(@dish) %>
+
+):
+1:    <h1>Update Dish</h1>
+2:    <%= form_for(@dish) do |f|%>
+3:        <%= f.label :Name %>
+4:        <%= f.text_field :title%>
+5:        <%= f.label :Takes (minutes) %>
+6:        <%= f.number_field :ready_in_minutes %>
+7:        <%= f.label :Dish description %>
+8:        <%= f.text_area :summary %>
+9:        <p><%= f.submit %></p>
+10:    <% end %>
+11:    
+12:    
+13:    
+14:    <%= link_to 'Show', @dish %> |
+15:    <%= link_to 'Back', dishes_path %> | 
+16:    <%= link_to 'Advanced', advance_edit_dish(@dish) %>
+  
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Update Dish</h1>
+<%= form_for(@dish) do |f|%>
+    <%= f.label :Name %>
+    <%= f.text_field :title%>
+    <%= f.label :Takes (minutes) %>
+    <%= f.number_field :ready_in_minutes %>
+    <%= f.label :Dish description %>
+    <%= f.text_area :summary %>
+    <p><%= f.submit %></p>
+<% end %>
+
+
+
+<%= link_to 'Show', @dish %> |
+<%= link_to 'Back', dishes_path %> | 
+<%= link_to 'Advanced', advance_edit_dish(@dish) %>
+
+):
+1:    <h1>Update Dish</h1>
+2:    <%= form_for(@dish) do |f|%>
+3:        <%= f.label :Name %>
+4:        <%= f.text_field :title%>
+5:        <%= f.label :Takes (minutes) %>
+6:        <%= f.number_field :ready_in_minutes %>
+7:        <%= f.label :Dish description %>
+8:        <%= f.text_area :summary %>
+9:        <p><%= f.submit %></p>
+10:    <% end %>
+11:    
+12:    
+13:    
+14:    <%= link_to 'Show', @dish %> |
+15:    <%= link_to 'Back', dishes_path %> | 
+16:    <%= link_to 'Advanced', advance_edit_dish(@dish) %>
+  
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:19: syntax error, unexpected end, expecting end-of-input
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:31:29 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1285)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1357)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 3189)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Update Dish</h1>
+<%= form_for(@dish) do |f|%>
+    <%= f.label :Name %>
+    <%= f.text_field :title%>
+    <%= f.label :Takes_minutes %>
+    <%= f.number_field :ready_in_minutes %>
+    <%= f.label :Dish description %>
+    <%= f.text_area :summary %>
+    <p><%= f.submit %></p>
+<% end %>
+
+
+
+<%= link_to 'Show', @dish %> |
+<%= link_to 'Back', dishes_path %> | 
+<%= link_to 'Advanced', advance_edit_dish(@dish) %>
+
+):
+1:    <h1>Update Dish</h1>
+2:    <%= form_for(@dish) do |f|%>
+3:        <%= f.label :Name %>
+4:        <%= f.text_field :title%>
+5:        <%= f.label :Takes_minutes %>
+6:        <%= f.number_field :ready_in_minutes %>
+7:        <%= f.label :Dish description %>
+8:        <%= f.text_area :summary %>
+9:        <p><%= f.submit %></p>
+10:    <% end %>
+11:    
+12:    
+13:    
+14:    <%= link_to 'Show', @dish %> |
+15:    <%= link_to 'Back', dishes_path %> | 
+16:    <%= link_to 'Advanced', advance_edit_dish(@dish) %>
+  
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:31:47 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 229.0ms | Allocations: 8547)
+  Rendered layout layouts/application.html.erb (Duration: 229.4ms | Allocations: 8617)
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 0.3ms | Allocations: 10283)
+
+
+  
+ActionView::Template::Error (undefined method `advance_edit_dish' for #<ActionView::Base:0x007fcfd172dc30>
+Did you mean?  advance_edit_dish_url
+               advance_edit_dish_path):
+    13: 
+    14: <%= link_to 'Show', @dish %> |
+    15: <%= link_to 'Back', dishes_path %> | 
+    16: <%= link_to 'Advanced', advance_edit_dish(@dish) %>
+  
+app/views/dishes/edit.html.erb:16
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:33:17 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.9ms | Allocations: 8313)
+Completed 200 OK in 309ms (Views: 77.6ms | ActiveRecord: 11.0ms | Allocations: 16754)
+
+
+Started GET "/dishes/1/advance_edit" for ::1 at 2021-02-05 12:33:24 -0600
+Processing by DishesController#advance_edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 585)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dish):
+  
+app/controllers/dishes_controller.rb:72:in `dish_params'
+app/controllers/dishes_controller.rb:24:in `advance_edit'
+Started GET "/dishes/1/advance_edit" for ::1 at 2021-02-05 12:34:28 -0600
+Processing by DishesController#advance_edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/dishes_controller.rb:24:in `advance_edit'
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:24:in `advance_edit'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/advance_edit.html.erb within layouts/application
+  Rendered dishes/advance_edit.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 1383)
+Completed 500 Internal Server Error in 381ms (ActiveRecord: 7.0ms | Allocations: 9156)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Update Dish</h1>
+<%= form_for(@dish) do |f|%>
+    <%= f.label :Name %>
+    <%= f.text_field :title%>
+    <%= f.label :Takes (minutes) %>
+    <%= f.number_field :ready_in_minutes %>
+    <%= f.label :Dish description %>
+    <%= f.text_area :summary %>
+    <%= f.label :Image source %>
+    <%= f.text_field :image%>
+    <%= f.label :Source URL%>
+    <%= f.text_field :sourceurl%>
+    
+    <p><%= f.submit %></p>
+
+<% end %>
+
+
+
+<%= link_to 'Show', @dish %> |
+<%= link_to 'Back', dishes_path %>
+
+):
+1:    <h1>Update Dish</h1>
+2:    <%= form_for(@dish) do |f|%>
+3:        <%= f.label :Name %>
+4:        <%= f.text_field :title%>
+5:        <%= f.label :Takes (minutes) %>
+6:        <%= f.number_field :ready_in_minutes %>
+7:        <%= f.label :Dish description %>
+8:        <%= f.text_area :summary %>
+9:        <%= f.label :Image source %>
+10:        <%= f.text_field :image%>
+11:        <%= f.label :Source URL%>
+12:        <%= f.text_field :sourceurl%>
+13:        
+14:        <p><%= f.submit %></p>
+15:    
+16:    <% end %>
+17:    
+18:    
+19:    
+20:    <%= link_to 'Show', @dish %> |
+21:    <%= link_to 'Back', dishes_path %>
+  
+app/views/dishes/advance_edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/advance_edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:11: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/dishes/advance_edit.html.erb:24: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/advance_edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/advance_edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:11: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/dishes/advance_edit.html.erb:24: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/advance_edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/advance_edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:11: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/dishes/advance_edit.html.erb:24: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/advance_edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/advance_edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:11: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/dishes/advance_edit.html.erb:24: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/advance_edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/advance_edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:11: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/dishes/advance_edit.html.erb:24: syntax error, unexpected end, expecting end-of-input
+app/views/dishes/advance_edit.html.erb:5: syntax error, unexpected '(', expecting ')'
+app/views/dishes/advance_edit.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dishes/advance_edit.html.erb:11: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/dishes/advance_edit.html.erb:24: syntax error, unexpected end, expecting end-of-input
+Started GET "/dishes/1/advance_edit" for ::1 at 2021-02-05 12:34:57 -0600
+Processing by DishesController#advance_edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:24:in `advance_edit'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/advance_edit.html.erb within layouts/application
+  Rendered dishes/advance_edit.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1828)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.2ms | Allocations: 5765)
+Completed 200 OK in 85ms (Views: 79.1ms | ActiveRecord: 0.3ms | Allocations: 7445)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:35:38 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1180)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 5115)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.3ms | Allocations: 6254)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:35:41 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 5010)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 0.2ms | Allocations: 6193)
+
+
+Started GET "/dishes/1/advance_edit" for ::1 at 2021-02-05 12:35:47 -0600
+Processing by DishesController#advance_edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:24:in `advance_edit'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/advance_edit.html.erb within layouts/application
+  Rendered dishes/advance_edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1697)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 5444)
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 6509)
+
+
+Started GET "/dishes/1/edit" for ::1 at 2021-02-05 12:35:48 -0600
+Processing by DishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/edit.html.erb within layouts/application
+  Rendered dishes/edit.html.erb within layouts/application (Duration: 45.3ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 84.4ms | Allocations: 4726)
+Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 0.3ms | Allocations: 5670)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:35:50 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 829)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 4575)
+Completed 200 OK in 65ms (Views: 63.6ms | ActiveRecord: 0.2ms | Allocations: 4968)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:36:52 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 5076)
+Completed 200 OK in 61ms (Views: 57.1ms | ActiveRecord: 0.5ms | Allocations: 6218)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:37:49 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 5055)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.2ms | Allocations: 6191)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:38:02 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1078)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 5012)
+Completed 200 OK in 47ms (Views: 40.0ms | ActiveRecord: 0.3ms | Allocations: 6148)
+
+
+Started GET "/dishes/1" for ::1 at 2021-02-05 12:38:12 -0600
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/show.html.erb within layouts/application
+  Rendered dishes/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 4291)
+Completed 200 OK in 46ms (Views: 39.3ms | ActiveRecord: 0.2ms | Allocations: 5980)
+
+
+Started GET "/dishes/1" for ::1 at 2021-02-05 12:38:34 -0600
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/show.html.erb within layouts/application
+  Rendered dishes/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3736)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 3806)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.2ms | Allocations: 5471)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dish' for #<ActionView::Base:0x007fcfd4cadab8>
+Did you mean?  @dish):
+    27: 
+    28: <%= link_to 'Edit', edit_dish_path(@dish) %> |
+    29: <%= link_to 'Back', dishes_path %> | 
+    30: <td><%= link_to 'This dish sucks', dish, method: :delete, data: { confirm: 'We dissagree, are you sure you want to remove it?' } %></td>
+  
+app/views/dishes/show.html.erb:30
+Started GET "/dishes/1" for ::1 at 2021-02-05 12:39:01 -0600
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/show.html.erb within layouts/application
+  Rendered dishes/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 409)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 4345)
+Completed 200 OK in 154ms (Views: 148.4ms | ActiveRecord: 0.2ms | Allocations: 6051)
+
+
+Started GET "/dishes/1" for ::1 at 2021-02-05 12:39:12 -0600
+Processing by DishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dishes_controller.rb:67:in `set_dish'
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/show.html.erb within layouts/application
+  Rendered dishes/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 415)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4350)
+Completed 200 OK in 27ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 6041)
+
+
+Started GET "/dishes" for ::1 at 2021-02-05 12:51:56 -0600
+Processing by DishesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/dishes/index.html.erb:18
+  [1m[36mDish Load (1.2ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes"[0m
+  ↳ app/views/dishes/index.html.erb:18
+  Rendered dishes/index.html.erb within layouts/application (Duration: 237.4ms | Allocations: 9116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 292.1ms | Allocations: 12872)
+Completed 200 OK in 325ms (Views: 305.0ms | ActiveRecord: 6.0ms | Allocations: 14010)
+
+

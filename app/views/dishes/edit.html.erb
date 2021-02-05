@@ -1,6 +1,16 @@
-<h1>Editing Dish</h1>
+<h1>Update Dish</h1>
+<%= form_for(@dish) do |f|%>
+    <%= f.label :Name %>
+    <%= f.text_field :title%>
+    <%= f.label :Takes_minutes %>
+    <%= f.number_field :ready_in_minutes %>
+    <%= f.label :Dish_description %>
+    <%= f.text_area :summary %>
+    <p><%= f.submit %></p>
+<% end %>
 
-<%= render 'form', dish: @dish %>
+
 
 <%= link_to 'Show', @dish %> |
-<%= link_to 'Back', dishes_path %>
+<%= link_to 'Back', dishes_path %> | 
+<%= link_to 'Advanced', advance_edit_dish_path(@dish) %>

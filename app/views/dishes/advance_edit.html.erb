@@ -1,0 +1,21 @@
+<h1>Update Dish</h1>
+<%= form_for(@dish) do |f|%>
+    <%= f.label :Name %>
+    <%= f.text_field :title%>
+    <%= f.label :Takes_minutes %>
+    <%= f.number_field :ready_in_minutes %>
+    <%= f.label :Dish_description %>
+    <%= f.text_area :summary %>
+    <%= f.label :Image_source %>
+    <%= f.text_field :image%>
+    <%= f.label :Source_URL%>
+    <%= f.text_field :sourceurl%>
+
+    <p><%= f.submit %></p>
+
+<% end %>
+
+
+
+<%= link_to 'Show', @dish %> |
+<%= link_to 'Back', edit_dish_path(@dish) %>

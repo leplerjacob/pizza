@@ -17,6 +17,11 @@ class DishesController < ApplicationController
 
   # GET /dishes/1/edit
   def edit
+    
+  end
+
+  def advance_edit
+    @dish = Dish.find_by(id: params[:id])
   end
 
   # POST /dishes or /dishes.json
