@@ -17,14 +17,12 @@
   <tbody>
     <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.title %></td>
+        <td><%= link_to dish.title , dish %></td>
         <td><%= dish.ready_in_minutes %></td>
         <td><%= dish.image %></td>
         <td><%= dish.summary %></td>
         <td><%= dish.sourceurl %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -33,3 +31,5 @@
 <br>
 
 <%= link_to 'New Dish', new_dish_path %>
+
+<%= image_tag("yummy_pizza.jpg", :alt => "its a pizza") %>
